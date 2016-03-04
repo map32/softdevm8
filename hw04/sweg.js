@@ -1,0 +1,37 @@
+var c = document.getElementById("kyk");
+var c1 = c.getBoundingClientRect();
+var k = document.createElementNS("http://www.w3.org/2000/svg", "image");
+k.setAttribute("xlink:href","https://secure.static.tumblr.com/2f66702c53598952d1fa7b828ed61ad6/flsthpo/v3Rnfuv98/tumblr_static_tumblr_static_d9vendggs9kcg84ocssg40okk_640.jpg");
+k.setAttribute("width","200");
+k.setAttribute("height","100");
+c.appendChild(k);
+var a;
+var pretty = function(){
+    var dx = 5;
+    var dy = 5;
+    var x = Math.random()*(c1.width-200);
+    var y = Math.random()*(c1.height-100);
+    k.setAttribute("x",x.toString());
+    k.setAttribute("y",y.toString());
+    var draw = function(){
+	x += dx;
+	y += dy;
+	if (x+200 >= c1.width){
+		dx = -5;	
+	} else if (x <= 0) {
+		dx = 5;
+	}
+	if (y+100 >= c1.height){
+		dy = -5;	
+	} else if (y <= 0) {
+		dy = 5;
+	}
+    }
+    a = setInterval(draw,1000/60);
+}
+var refresh = function(){
+    clearInterval(a);
+}
+c.addEventListener('click', pretty);
+var d = document.getElementById("pause");
+d.addEventListener('click', refresh);

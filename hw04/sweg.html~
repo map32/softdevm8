@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <style>
+    .candy {
+    border-style: solid;
+    }
+    </style>
+  </head>
+  <body>
+    <canvas class="candy" width="1024" height="768" id="kyk"></canvas>
+    pastel
+    <br><button id="pause">pause</button>
+    <script src="sweg.js"></script>
+  </body>
+</html>
