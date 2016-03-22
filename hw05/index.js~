@@ -6,6 +6,7 @@ var ddel = {"AL":44+9,"AK":20,"AZ":85,"AR":22+10,"CA":546,"CO":28+38,"CT":70,"DE
 var dval = [];
 for(var key in ddel){
 	dval.push(ddel[key]);
+        console.log(key);
 }
 var linearscale = d3.scale.linear()
                           .domain([0,d3.max(dval)])
@@ -15,3 +16,5 @@ var linearscale = d3.scale.linear()
 dem.selectAll("div").data(states).enter().append("div").attr("class","dem").style("width",function(d){return linearscale(ddel[d])+"%";}).text(function(d){return d+" "+ddel[d];});
 
 //rep.selectAll("div").data(states).enter().append("div").class("rep").style("width",function(d){return rdel[d]*10+"px";}).text(function(d){return d+" "+rdel[d];});
+
+console.log(states);

@@ -16,6 +16,8 @@ var pretty = function(){
     var draw = function(){
 	x += dx;
 	y += dy;
+	k.setAttribute("x",x.toString());
+    k.setAttribute("y",y.toString());
 	if (x+200 >= c1.width){
 		dx = -5;	
 	} else if (x <= 0) {
